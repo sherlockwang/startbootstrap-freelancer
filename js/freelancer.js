@@ -41,4 +41,24 @@
         });
     });
 
+    // Make first section full screen height
+    $('header').height($(window).height());
+
+    // Portfolio slider
+    $('.slider').owlCarousel({
+        responsive: {
+            1200: {
+                items: 2,
+            },
+            600: {
+                items: 1,
+            }
+        },
+        items: 2,
+        loop: true,
+        nav: true,
+        center: true,
+        margin: 30,
+    })
+
 })(jQuery); // End of use strict
