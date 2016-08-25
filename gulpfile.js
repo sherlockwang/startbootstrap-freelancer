@@ -6,6 +6,8 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var pkg = require('./package.json');
+var cache = require('gulp-cache');
+var imagemin = require('gulp-imagemin');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -89,4 +91,21 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
+});
+
+// Build task
+gulp.task('build', ['less', 'minify-css', 'minify-js'], function () {
+    gulp.src('index.html')
+        .pipe(gulp.dest('dist'));
+    gulp.src('vendor/**/*')
+        .pipe(gulp.dest('dist/vendor'));
+    gulp.src('css/*.min.css')
+        .pipe(gulp.dest('dist/css'));
+    gulp.src(['js/contact_me.js', 'js/freelancer.min.js', 'js/jqBootstrapValidation.js'])
+        .pipe(gulp.dest('dist/js'));
+    gulp.src('mail/contact_me.php')
+        .pipe(gulp.dest('dist/mail'));
+    gulp.src('img/**/*')
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest('dist/img'));
 });
