@@ -220,8 +220,8 @@ section.success {
 #portfolio .portfolio-item .portfolio-link .caption:hover {
   opacity: 1;
 }
-#portfolio .portfolio-item .portfolio-link .caption:before,
-#portfolio .portfolio-item .portfolio-link .caption:after {
+#portfolio .portfolio-item .portfolio-link .caption::before,
+#portfolio .portfolio-item .portfolio-link .caption::after {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -232,20 +232,20 @@ section.success {
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
   transition: opacity 0.35s, transform 0.35s;
 }
-#portfolio .portfolio-item .portfolio-link .caption:before {
+#portfolio .portfolio-item .portfolio-link .caption::before {
   border-top: 2px solid #fff;
   border-bottom: 2px solid #fff;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
 }
-#portfolio .portfolio-item .portfolio-link .caption:after {
+#portfolio .portfolio-item .portfolio-link .caption::after {
   border-left: 2px solid #fff;
   border-right: 2px solid #fff;
   -webkit-transform: scale(1, 0);
   transform: scale(1, 0);
 }
-#portfolio .portfolio-item .portfolio-link .caption:hover:before,
-#portfolio .portfolio-item .portfolio-link .caption:hover:after {
+#portfolio .portfolio-item .portfolio-link .caption:hover::before,
+#portfolio .portfolio-item .portfolio-link .caption:hover::after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);

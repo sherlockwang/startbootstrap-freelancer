@@ -240,7 +240,7 @@ section.success {
                 &:hover {
                     opacity: 1;
                 }
-                &:before, &:after {
+                &::before, &::after {
                 	position: absolute;
                 	top: 30px;
                 	right: 30px;
@@ -251,19 +251,19 @@ section.success {
                 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
                 	transition: opacity 0.35s, transform 0.35s;
                 }
-                &:before {
+                &::before {
                 	border-top: 2px solid #fff;
                 	border-bottom: 2px solid #fff;
                 	-webkit-transform: scale(0, 1);
                 	transform: scale(0, 1);
                 }
-                &:after {
+                &::after {
                 	border-left: 2px solid #fff;
                 	border-right: 2px solid #fff;
                 	-webkit-transform: scale(1, 0);
                 	transform: scale(1, 0);
                 }
-                &:hover:before, &:hover:after {
+                &:hover::before, &:hover::after {
                 	opacity: 1;
                 	-webkit-transform: scale(1);
                 	transform: scale(1);
