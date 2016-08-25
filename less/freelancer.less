@@ -229,7 +229,7 @@ section.success {
             max-width: 400px;
             margin: 0 auto;
             .caption {
-                background: fade(@theme-success, 90%);
+                background: fade(@theme-success, 80%);
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -240,6 +240,34 @@ section.success {
                 &:hover {
                     opacity: 1;
                 }
+                &:before, &:after {
+                	position: absolute;
+                	top: 30px;
+                	right: 30px;
+                	bottom: 30px;
+                	left: 30px;
+                	content: '';
+                	opacity: 0;
+                	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+                	transition: opacity 0.35s, transform 0.35s;
+                }
+                &:before {
+                	border-top: 2px solid #fff;
+                	border-bottom: 2px solid #fff;
+                	-webkit-transform: scale(0, 1);
+                	transform: scale(0, 1);
+                }
+                &:after {
+                	border-left: 2px solid #fff;
+                	border-right: 2px solid #fff;
+                	-webkit-transform: scale(1, 0);
+                	transform: scale(1, 0);
+                }
+                &:hover:before, &:hover:after {
+                	opacity: 1;
+                	-webkit-transform: scale(1);
+                	transform: scale(1);
+                } 
                 .caption-content {
                     position: absolute;
                     width: 100%;
