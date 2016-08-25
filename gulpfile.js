@@ -94,7 +94,7 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
 });
 
 // Build task
-gulp.task('build', ['less', 'minify-css', 'minify-js'], function () {
+gulp.task('build', ['browserSync', 'less', 'minify-css', 'minify-js'], function () {
     gulp.src('index.html')
         .pipe(gulp.dest('dist'));
     gulp.src('vendor/**/*')
