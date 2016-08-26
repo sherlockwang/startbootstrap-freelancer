@@ -1,10 +1,10 @@
 # Jinghan Wang Bootstrap Portfolio using [Start Bootstrap - Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
 
-Clone the repo and run npm install to initialize.
+Clone the repo and run `npm install` to initialize.
 
-Run gulp dev to develop.
+Run `gulp dev` to develop.
 
-Run gulp build to get the built version.
+Run `gulp build` to get the built version.
 
 ## Copyright and License
 
