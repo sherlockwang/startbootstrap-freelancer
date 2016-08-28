@@ -93,19 +93,19 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('js/**/*.js', browserSync.reload);
 });
 
-// Build task
+// Build task to docs folder
 gulp.task('build', ['browserSync', 'less', 'minify-css', 'minify-js'], function () {
     gulp.src('index.html')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('docs'));
     gulp.src('vendor/**/*')
-        .pipe(gulp.dest('dist/vendor'));
+        .pipe(gulp.dest('docs/vendor'));
     gulp.src('css/*.min.css')
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('docs/css'));
     gulp.src(['js/contact_me.js', 'js/freelancer.min.js', 'js/jqBootstrapValidation.js'])
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('docs/js'));
     gulp.src('mail/contact_me.php')
-        .pipe(gulp.dest('dist/mail'));
+        .pipe(gulp.dest('docs/mail'));
     gulp.src('img/**/*')
         .pipe(cache(imagemin()))
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest('docs/img'));
 });
