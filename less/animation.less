@@ -1,18 +1,22 @@
-@import "variables.less";
-@import "mixins.less";
-
-.transition (@prop: all, @time: 1s, @ease: linear) {
-	-webkit-transition: @prop @time @ease;
-	-moz-transition: @prop @time @ease;
-	-o-transition: @prop @time @ease;
-	-ms-transition: @prop @time @ease;
-	transition: @prop @time @ease;
+.keyframes (@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
 }
 
-@keyframe () {}
+.animation (@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
+}
 
-.col-lg-12 {
-	img {
-		.transition();
-	}
+.keyframes ( fade-in; {
+
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+
+});
+ 
+.fade-in {
+	.animation (fade-in 1s linear);
 }
